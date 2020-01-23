@@ -153,21 +153,22 @@
             var productAction = $("#productAction");
             productAction.unbind();
             var modal = $(this);
-            modal.find('.modal-title').text("Plan new trip");
-            modal.find('#firstName').val("");
-            modal.find('#lastName').val("");
-            modal.find('#email').val("");
-            modal.find('#nationality').val("");
+			modal.find('#firstName').val("John");
+			modal.find('#lastName').val("Wick");
+			modal.find('#email').val("wick@boogeyman.com");
+			modal.find('#nationality').val("Polish");
 
-            modal.find('#street').val("");
-            modal.find('#city').val("");
-            modal.find('#zipCode').val("");
-            modal.find('#country').val("");
+			modal.find('#street').val("Bozetechova 1");
+			modal.find('#city').val("Brno");
+			modal.find('#zipCode').val("61200");
+			modal.find('#country').val("Czech Republic");
 
-            modal.find('#destinationCountry').val("");
-            modal.find('#destinationCity').val("");
-            modal.find('#tripBegin').val("");
-            modal.find('#tripEnd').val("");
+			modal.find('#destinationCountry').val("US");
+			modal.find('#destinationCity').val("New York");
+			var currentDate = new Date();
+			modal.find('#tripBegin').val(currentDate.toISOString().substring(0, 10));
+			currentDate.setDate(currentDate.getDate() + 7);
+			modal.find('#tripEnd').val(currentDate.toISOString().substring(0, 10));
 
             productAction.click(function () {
 
